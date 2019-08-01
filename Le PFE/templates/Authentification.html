@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Responsive styles-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <!-- Animation -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <!-- Prettyphoto -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prettyPhoto.css') }}">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.css') }}">
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}">
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cd-hero.css') }}">
+    <!-- Style Swicther -->
+    <link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+    <style>
+        #login { color: #654321; }
+        #mdp {color:darkturquoise}
+        #connect {background-color: darkturquoise; text-decoration-color:#654321; }
+        #alertmsg {width: 30%; margin-left: 35%}
+        #remember{color: grey}
+        
+          </style>
+</head>
+
+<body>
+        <header id="header" class="navbar-fixed-top header" role="banner">
+              
+                        <!-- Logo start -->
+                     
+                          
+                            <div class="navbar-brand navbar-bg">
+                                <a href="index.html">
+                                    <img class="img-responsive" src="static/images/s2mlogo.png" alt="logo">
+                                </a> 
+                            </div> 
+                            
+        </header>                  
+                      
+    <section id="home" class="no-padding">
+        <div id="main-slide" class="cd-hero">
+            <ul class="cd-hero-slider">
+                <li class="selected">
+                    <div class="overlay2">
+                        <img class="" src="static/images/Original.jpg"  >
+                    
+                    <div class="cd-full-width">
+                        <form method="POST" action="">
+                            {{form.hidden_tag()}}
+                        <h3 id="login">{{form.login.label()}}</h3>{{form.login()}} <br>
+                        <h3 id="mdp">{{form.mdp.label()}}</h3>{{form.mdp()}} 
+                        <br>
+                        <br>
+                        <h3 id="remember">{{form.remember.label()}} {{form.remember()}} </h3>  
+<br>
+
+                       {{form.submit(class="btn btn-primary white cd-btn", id="connect")}} 
+                    </form>
+                    <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages   %}
+                          <div class="alert alert-{{ category }}" id="alertmsg" >
+                              {{ message }}
+                          </div>
+                        {%endfor%}
+                      {%endif%}
+                    {%endwith%}
+                    
+                    </div> <!-- .cd-full-width -->
+                </div>
+                </li>
+               
+                </div>   
+        <!--/ Main slider end -->
+    </section>
+
+
+</body>
+
+</html>
