@@ -5,7 +5,7 @@
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-    <title>BizCraft - Responsive Html5 Template</title>
+    <title>Situation Financiere</title>
     <meta name="description" content="">	
 	<meta name="author" content="">
 
@@ -50,7 +50,10 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-
+<style>
+        #Bleu { color:darkturquoise;}
+        #Marron {color: #654321;}
+</style>
 </head>
 {% include 'header.html' %}
 <body>
@@ -85,24 +88,26 @@
 						<img class="" src="static/images/slider/bg1.jpg" alt="slider">
 					</div>
 					<div class="cd-full-width">
-						<h2>Need To Invent The Future!</h2>
-						<h3>We Making Difference To Great Things Possible</h3>
-						<a href="#0" class="btn btn-primary white cd-btn">Start Now</a>
-						<a href="#0" class="btn btn-primary solid cd-btn">Learn More</a>
+						<h2 id="Marron">Bonjour Mr {{ current_user.Nom }} {{ current_user.Prenom }}</h2>
+						<br>
+						<h3 id="Bleu">Bienvenue sur votre espace client </h3> 
 					</div> <!-- .cd-full-width -->
 				</li>
 				<li>
 					<div class="overlay2">
-						<img class="" src="static/images/slider/bg2.jpg" alt="slider">
+						<img class="" src="static/images/comptabilite.jpg" alt="slider">
 					</div>
-					<div class="cd-half-width">
-						<h2>How Big Can You Dream?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In consequatur cumque natus!</p>
-						<a href="#0" class="cd-btn btn btn-primary solid">Take a Tour</a>
+					<div class="cd-full-width">
+						
+						<h2  id="Marron"> Situation financière </h2>
+						
+						<p id="Bleu">Relevé de votre situation financière à ce jour, le {{ date.strftime("%A %d %B %Y")}}</p>
+						<p>Compte N° {{cmpt.Numero}}</p>
+						
 					</div> <!-- .cd-half-width -->
-
-					<div class="cd-half-width cd-img-container">
-						<img src="static/images/slider/bg-thumb1.png" alt="">
+					
+					<div class="cd-half-width ">
+							
 					</div> <!-- .cd-half-width.cd-img-container -->
 				</li>
 				<li>
@@ -137,8 +142,8 @@
 			<nav>
 				<span class="cd-marker item-1"></span>
 				<ul>
-					<li class="selected"><a href="#0"><i class="fa fa-bicycle"></i> Invent</a></li>
-					<li><a href="#0"><i class="fa fa-hotel"></i> Dream</a></li>
+					<li class="selected"><a href="#0"><i class="fa fa-hand-o-down"></i> Bienvenue</a></li>
+					<li><a href="#0"><i class="fa fa-money"></i> Solde</a></li>
 					<li><a href="#0"><i class="fa fa-android"></i> Tech</a></li>
 					<li class="video"><a href="#0"><i class="fa fa-video-camera"></i> Video</a></li>
 				</ul>
@@ -156,6 +161,16 @@
 				<div class="col-md-12 heading">
 					<span class="title-icon pull-left"><i class="fa fa-cogs"></i></span>
 					<h2 class="title">Service We Provide <span class="title-desc">A Quality Experience Team with 4 years experience</span></h2>
+					<table border="1">
+						<tr>
+							<td>
+
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div><!-- Title row end -->
 
